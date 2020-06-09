@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="../images/Logo.png">
+    <script src="https://kit.fontawesome.com/267db64420.js" crossorigin="anonymous"></script>
+    <meta property="og:title" content="Orinoco"/>
+    <title>Panier</title>
+    <script defer src="../js/panier.js"></script>
+</head>
+<body>
+   <div class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="../index.html">Orinoco</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="produit.html">Produit <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item  active">
+                  <a class="nav-link" href="panier.html">Panier</a>
+                </li>
+                <li class="nav-item  active">
+                  <a class="nav-link " href="commande.html">Confirmation</a>
+                </li>
+              </ul>
+              <a href="panier.html"><i class="fas fa-shopping-basket fa-2x"></i></a>
+            </div>
+          </nav>
+    </header>
+    <main id="panier" class="row">
+      <div>
+        <h1>Votre Panier</h1>
+        <table id="panier">
+            <thead>
+                <tr id="panier__commande">
+                    <td id="name">Désignation</td>
+                    <td id="price">Prix</td>
+                    <td id="color">Couleur</td>
+                    <td id="quantity">Quantité</td>
+                    <td id="totalPrice">Prix Total</td>
+                    <td id="deleteProduct">Supprimer la ligne</td>
+                </tr>
+            </thead>
+            <tbody id="panier__body">
+            </tbody>
+            <tfoot id="prix__total">
+            </tfoot>
+        </table>
+      </div>
+      <div class="container bloc-lg">
+        <h2 class="text-center">Pour nous contacter</h2>
+          <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-sm-6">
+                  <form id="form_1" class="d-flex" novalidate>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                     <label>
+                     Nom
+                      <input id="name" class="form-control" type="text" required />
+                      </label>	
+                    </div>
+                    <div class="form-group">
+                     <label>
+                      Prénom
+                        <input id="name" class="form-control" type="text" required />
+                     </label>	
+                    </div>
+                    <div class="form-group">
+                      <label>
+                         Adresse
+                       <input id="name" class="form-control" type="text" required />
+                     </label>	
+                    </div>
+                   <div class="form-group">
+                        <label>
+                           Code postal
+                            <input id="name" class="form-control" type="text" required />
+                        </label>	
+                      </div>             
+                     </div>
+                      <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  Adresse email
+                  <input id="email" class="form-control" type="email" required />
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                  Téléphone
+                <input class="form-control" type="text" required id="input_504" />
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                Commentaire<br>
+                  <textarea id="message" class="form-control" rows="4" cols="50" required></textarea>
+                </label>
+              </div>
+               <button class="bloc-button btn btn-primary btn-block cta-hero btn-atomic-tangerine " type="submit">
+              Validation commande
+              </button>
+            </div> 
+          </form>
+           </div>
+          </div>
+      </div>  
+    </main>
+    <footer class="row"> 
+      <div class="container bloc-sm">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="text-center">
+              Orinoco - A votre service.
+            </h3>
+            <div class="row p-4">
+              <div class="col-sm-3">
+                <div class="text-center">
+                  <a class="social" href="index.html"><span class="fa fa-twitter icon-md">Twitter</span></a>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="text-center">
+                  <a class="social" href="index.html"><span class="fa fa-facebook icon-md">Facebook</span></a>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="text-center">
+                  <a class="social" href="index.html"><span class="fa fa-dribbble icon-md">Dribble</span></a>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="text-center">
+                  <a class="social" href="index.html"><span class="fa fa-instagram icon-md">Instagram</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-around">
+              <div class="col-sm-4">
+                <h4>Partenaires</h4>
+                  <ul>
+                    <li><a href="voiture.com" title="voiture">Location de voiture</a></li>
+                    <li><a href="pizza.com" title="pizza">Pizerria</a></li>
+                    <li><a href="matoiture.com" title="toiture">Charpentier</a></li>
+                    <li><a href="immobilierseo.com" title="immobilier">Agence Immobilière</a></li>
+                  </ul>		
+              </div>
+              <div class="col-sm-4">
+                <h4><a href="mailto:maximemichard0@gmail.com">Contactez-nous</a></h4>
+                <ul class="list-unstyled">
+                  <li>maximemichard0@gmail.com</li>
+                  <li> 33 rue Beaulie 95000 Paris</li>
+                  <li>Ouvert 7j/7, 24h/24</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+   </div>
+</body>
+</html>

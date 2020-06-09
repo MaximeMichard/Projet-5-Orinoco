@@ -1,0 +1,32 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Utilisateur\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start'
+1 verbose cli ]
+2 info using npm@3.10.10
+3 info using node@v12.15.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle orinoco-backend@1.0.0~prestart: orinoco-backend@1.0.0
+6 silly lifecycle orinoco-backend@1.0.0~prestart: no script for prestart, continuing
+7 info lifecycle orinoco-backend@1.0.0~start: orinoco-backend@1.0.0
+8 verbose lifecycle orinoco-backend@1.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle orinoco-backend@1.0.0~start: PATH: C:\Users\Utilisateur\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;D:\Session\Bureau\Projet 5\JWDP5\node_modules\.bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\wamp64\bin\php\php7.4.0;C:\composer;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\Utilisateur\AppData\Local\Microsoft\WindowsApps;C:\Users\Utilisateur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Utilisateur\AppData\Roaming\npm;C:\wamp64\bin\php\php7.4.0;C:\Users\Utilisateur\AppData\Roaming\Composer\vendor\bin;C:\Users\Utilisateur\.dotnet\tools;C:\Users\Utilisateur\AppData\Local\GitHubDesktop\bin
+10 verbose lifecycle orinoco-backend@1.0.0~start: CWD: D:\Session\Bureau\Projet 5\JWDP5
+11 silly lifecycle orinoco-backend@1.0.0~start: Args: [ '/d /s /c', 'node server.js' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at process.kill (internal/process/per_thread.js:189:13)
+12 verbose stack     at process.listener (C:\Users\Utilisateur\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at process.emit (events.js:228:7)
+13 verbose cwd D:\Session\Bureau\Projet 5\JWDP5
+14 error Windows_NT 10.0.18362
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Utilisateur\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+16 error node v12.15.0
+17 error npm  v3.10.10
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

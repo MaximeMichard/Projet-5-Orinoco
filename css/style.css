@@ -1,0 +1,60 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+i {
+  font-weight: 10rem;
+}
+
+nav a, nav a:hover {
+  color: black;
+}
+
+.card {
+  width: 18rem;
+  margin: 20px 20px;
+}
+
+img {
+  height: 200px;
+}
+
+.price {
+  background-color: grey;
+  margin: 20px 0px;
+}
+
+.colors {
+  background-color: red;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+td {
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+footer .fa {
+  color: black;
+  font-size: 20px;
+}
+
+footer a, footer a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+footer li {
+  margin: 10px 0px;
+}
+
+/*# sourceMappingURL=style.css.map */
