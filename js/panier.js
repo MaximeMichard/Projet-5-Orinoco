@@ -15,8 +15,6 @@ if (storageCart != null) {
         let somme = 0;
         somme += resultPrice;
 
-        console.log(somme);
-
 
         let ligneTableau = panierTableau.insertRow(-1);
 

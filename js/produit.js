@@ -16,11 +16,12 @@ request.onreadystatechange = function() {
     let response = JSON.parse(this.responseText);
     
     let card= document.createElement('div');
-    card.classList.add('card'); 
+    card.classList.add('card','card-produit'); 
     container.appendChild(card);
 
     let img= document.createElement('img');
     img.classList.add('card-img-top');
+    img.setAttribute('class','image-produit');
     img.src= response.imageUrl;   
     card.appendChild(img);
 
@@ -44,6 +45,7 @@ request.onreadystatechange = function() {
     cardBody.appendChild(priceText);
 
     let select=document.createElement('select');
+    select.classList.add('card-text');
     select.setAttribute('id','select');
     cardBody.appendChild(select);
 
@@ -60,6 +62,7 @@ request.onreadystatechange = function() {
     }
 
     let btn = document.createElement('a');
+    btn.classList.add('card-text');
     btn.setAttribute('id','ajoutpanier')
     btn.classList.add('btn','btn-primary'); 
     btn.textContent='Ajouter au panier'; 

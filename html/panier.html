@@ -11,49 +11,32 @@
     <title>Panier</title>
     <script defer src="../js/panier.js"></script>
 </head>
-<body>
+<body class="page">
    <div class="container">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../index.html">Orinoco</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="produit.html">Produit <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item  active">
-                  <a class="nav-link" href="panier.html">Panier</a>
-                </li>
-                <li class="nav-item  active">
-                  <a class="nav-link " href="commande.html">Confirmation</a>
-                </li>
-              </ul>
-              <a href="panier.html"><i class="fas fa-shopping-basket fa-2x"></i></a>
-            </div>
-          </nav>
+      <nav class="navbar">
+        <a class="navbar-brand" href="../index.html"><img class="logo" src="../images/Logo.png" alt="Logo entreprise"></a>
+        <a href="panier.html"><i class="fas fa-shopping-basket fa-3x"></i></a>
+      </nav>
     </header>
     <main id="panier" class="row">
       <div>
         <h1>Votre Panier</h1>
-        <table id="panier">
-            <thead>
-                <tr id="panier__commande">
-                    <td id="name">Désignation</td>
-                    <td id="price">Prix</td>
-                    <td id="color">Couleur</td>
-                    <td id="quantity">Quantité</td>
-                    <td id="totalPrice">Prix Total</td>
-                    <td id="deleteProduct">Supprimer la ligne</td>
-                </tr>
-            </thead>
-            <tbody id="panier__body">
-            </tbody>
-            <tfoot id="prix__total">
-            </tfoot>
+        <table class="table">
+          <thead>
+            <tr class="panier__commande">
+              <th id="name" scope="col">Nom</th>
+              <th id="price" scope="col">Prix</th>
+              <th id="color" scope="col">Couleur</th>
+              <th id="quantity" scope="col">Quantité</th>
+              <th id="totalPrice" scope="col">Prix Total</th>
+              <th id="deleteProduct" scope="col">Delete</td>
+            </tr>
+          </thead>
+          <tbody id="panier__body">  
+          </tbody>
+          <tfoot id="prix__total">
+          </tfoot>
         </table>
       </div>
       <div class="container bloc-lg">
@@ -147,7 +130,7 @@
             <div class="row d-flex justify-content-around">
               <div class="col-sm-4">
                 <h4>Partenaires</h4>
-                  <ul>
+                  <ul class="list-unstyled">
                     <li><a href="voiture.com" title="voiture">Location de voiture</a></li>
                     <li><a href="pizza.com" title="pizza">Pizerria</a></li>
                     <li><a href="matoiture.com" title="toiture">Charpentier</a></li>

@@ -6,25 +6,16 @@ img{
     height: 200px;
 }
 
-.price{ 
-    background-color: grey;
-    margin: 20px 0px; 
-}
-
-.colors
-{
-    background-color: red;
-}
 main{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-td
+.fa
 {
-    padding:10px;
+    margin: 10px 0px;
 }
-h1
+.page, header
 {
-    text-align:center;
+    background-color: #f3e9f1;
 }

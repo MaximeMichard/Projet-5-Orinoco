@@ -11,6 +11,15 @@ nav a, nav a:hover {
   color: black;
 }
 
+.logo {
+  height: 5rem;
+  width: 10rem;
+}
+
+.fa-shopping-basket {
+  color: gray;
+}
+
 .card {
   width: 18rem;
   margin: 20px 20px;
@@ -20,27 +29,18 @@ img {
   height: 200px;
 }
 
-.price {
-  background-color: grey;
-  margin: 20px 0px;
-}
-
-.colors {
-  background-color: red;
-}
-
 main {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-td {
-  padding: 10px;
+.fa {
+  margin: 10px 0px;
 }
 
-h1 {
-  text-align: center;
+.page, header {
+  background-color: #f3e9f1;
 }
 
 footer .fa {
@@ -56,5 +56,18 @@ footer a, footer a:hover {
 footer li {
   margin: 10px 0px;
 }
+
+h1 {
+  text-align: center;
+}
+
+/* .image-produit
+{
+    height: 400px;
+}
+.card-produit
+{
+    width: 40rem;
+} */
 
 /*# sourceMappingURL=style.css.map */
