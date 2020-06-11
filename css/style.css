@@ -17,16 +17,18 @@ nav a, nav a:hover {
 }
 
 .fa-shopping-basket {
-  color: gray;
+  background: linear-gradient(to right, #e58a0c, #945ef0);
+  -webkit-text-fill-color: transparent;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+}
+.fa-shopping-basket:hover {
+  animation: zoom 2s;
 }
 
 .card {
   width: 18rem;
   margin: 20px 20px;
-}
-
-img {
-  height: 200px;
 }
 
 main {
@@ -41,17 +43,6 @@ main {
 
 .page, header {
   background-color: #f3e9f1;
-}
-
-.col-lg-6 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.col-lg-6 a {
-  margin: 20px 0px;
 }
 
 footer .fa {
@@ -76,6 +67,19 @@ h1 {
   text-align: center;
 }
 
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .col-lg-6 {
   display: flex;
   align-items: center;
@@ -90,6 +94,28 @@ h1 {
 .col-lg-6 img {
   border: 2px solid black;
   box-shadow: 1px 2px black;
+}
+
+.perso {
+  text-decoration: underline;
+}
+
+#ajoutpanier:hover {
+  animation: zoom 2s;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

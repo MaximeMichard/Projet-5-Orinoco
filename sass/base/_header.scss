@@ -1,3 +1,5 @@
+@import "../utils/mixin";
+
 header{
     display:flex;
     justify-content: center;
@@ -16,5 +18,9 @@ nav a, nav a:hover
    width: 10rem; 
 }
 .fa-shopping-basket{
-    color:rgb(128, 128, 128);
+    background:linear-gradient(to right,#e58a0c,#945ef0);
+    @include webkit;
+    &:hover{
+        animation: zoom 2s; 
+    }
 }

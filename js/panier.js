@@ -70,7 +70,7 @@ if (storageCart != null) {
         });
 
         const totalPrice = document.getElementById('prix__total');
-        totalPrice.innerHTML = `<p>Prix Total de votre panier</p>${somme} €<p></p>`;
+        totalPrice.innerHTML = `<p>Prix Total de votre panier</p><p>${somme} €</p>`;
 
         function updateQte(eltId, action) {
             let qteElt = document.getElementById(`qte-${eltId}`);
@@ -92,3 +92,5 @@ if (storageCart != null) {
         }
     }
 }
+
+//Bouton Validation de commande //

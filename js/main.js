@@ -24,6 +24,7 @@ request.open('GET', 'http://localhost:3000/api/teddies');
 request.send();
 }
 
+//Build Card// 
 
 const buildCard = (item, container) => {
 

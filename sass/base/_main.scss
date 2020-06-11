@@ -4,14 +4,8 @@
     width: 18rem;
     margin: 20px 20px; 
 }
-img{
-    height: 200px;
-}
-
 main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center;
 }
 .fa
 {
@@ -20,13 +14,4 @@ main{
 .page, header
 {
     background-color: $bg-body;
-}
-.col-lg-6
-{
-    @include center;
-    flex-direction: column;
-}
-.col-lg-6 a
-{
-    margin:20px 0px; 
 }

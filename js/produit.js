@@ -24,7 +24,7 @@ request.onreadystatechange = function() {
     card.appendChild(divimg);
 
     let img= document.createElement('img');
-    img.setAttribute('class','image-produit');
+    img.classList.add('img-thumbnail');
     img.src= response.imageUrl;   
     divimg.appendChild(img);
 
@@ -45,6 +45,11 @@ request.onreadystatechange = function() {
     priceText.classList.add('card-text');
     priceText.textContent=response.price +'€';
     cardBody.appendChild(priceText);
+
+    let content= document.createElement('p');
+    content.classList.add('perso'); 
+    content.innerHTML='Personnalisé votre produit :';
+    cardBody.appendChild(content); 
 
     let select=document.createElement('select');
     select.classList.add('card-text');
@@ -74,6 +79,9 @@ request.onreadystatechange = function() {
   addCart.onclick = function() {
     alert("Votre produit vient d'être ajouté au panier !")
 };
+
+//Bouton Ajouter produit //
+
   addCart.addEventListener('click', addProducts);
 
   let newCart = null;
