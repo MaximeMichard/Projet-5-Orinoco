@@ -1,8 +1,13 @@
-/* .image-produit
+.col-lg-6
 {
-    height: 400px;
+    @include center;
+    flex-direction: column;
 }
-.card-produit
+.col-lg-6 a
 {
-    width: 40rem;
-} */
+    margin:20px 0px; 
+}
+.col-lg-6 img{
+    border: 2px solid black;
+    box-shadow: 1px 2px black;
+}

@@ -14,19 +14,34 @@
 9 verbose lifecycle orinoco-backend@1.0.0~start: PATH: C:\Users\Utilisateur\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;D:\Session\Bureau\Projet 5\JWDP5\node_modules\.bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\wamp64\bin\php\php7.4.0;C:\composer;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\Utilisateur\AppData\Local\Microsoft\WindowsApps;C:\Users\Utilisateur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Utilisateur\AppData\Roaming\npm;C:\wamp64\bin\php\php7.4.0;C:\Users\Utilisateur\AppData\Roaming\Composer\vendor\bin;C:\Users\Utilisateur\.dotnet\tools;C:\Users\Utilisateur\AppData\Local\GitHubDesktop\bin
 10 verbose lifecycle orinoco-backend@1.0.0~start: CWD: D:\Session\Bureau\Projet 5\JWDP5
 11 silly lifecycle orinoco-backend@1.0.0~start: Args: [ '/d /s /c', 'node server.js' ]
-12 verbose stack Error: kill ENOSYS
-12 verbose stack     at process.kill (internal/process/per_thread.js:189:13)
-12 verbose stack     at process.listener (C:\Users\Utilisateur\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
-12 verbose stack     at process.emit (events.js:228:7)
-13 verbose cwd D:\Session\Bureau\Projet 5\JWDP5
-14 error Windows_NT 10.0.18362
-15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Utilisateur\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
-16 error node v12.15.0
-17 error npm  v3.10.10
-18 error code ENOSYS
-19 error errno ENOSYS
-20 error syscall kill
-21 error kill ENOSYS
-22 error If you need help, you may report this error at:
-22 error     <https://github.com/npm/npm/issues>
-23 verbose exit [ 1, true ]
+12 silly lifecycle orinoco-backend@1.0.0~start: Returned: code: 3221225786  signal: null
+13 info lifecycle orinoco-backend@1.0.0~start: Failed to exec start script
+14 verbose stack Error: orinoco-backend@1.0.0 start: `node server.js`
+14 verbose stack Exit status 3221225786
+14 verbose stack     at EventEmitter.<anonymous> (C:\Users\Utilisateur\AppData\Roaming\npm\node_modules\npm\lib\utils\lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.emit (events.js:223:5)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Users\Utilisateur\AppData\Roaming\npm\node_modules\npm\lib\utils\spawn.js:40:14)
+14 verbose stack     at ChildProcess.emit (events.js:223:5)
+14 verbose stack     at maybeClose (internal/child_process.js:1021:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:283:5)
+15 verbose pkgid orinoco-backend@1.0.0
+16 verbose cwd D:\Session\Bureau\Projet 5\JWDP5
+17 error Windows_NT 10.0.18362
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Utilisateur\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+19 error node v12.15.0
+20 error npm  v3.10.10
+21 error code ELIFECYCLE
+22 error orinoco-backend@1.0.0 start: `node server.js`
+22 error Exit status 3221225786
+23 error Failed at the orinoco-backend@1.0.0 start script 'node server.js'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the orinoco-backend package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     node server.js
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs orinoco-backend
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls orinoco-backend
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

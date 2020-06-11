@@ -16,21 +16,23 @@ request.onreadystatechange = function() {
     let response = JSON.parse(this.responseText);
     
     let card= document.createElement('div');
-    card.classList.add('card','card-produit'); 
+    card.classList.add('row'); 
     container.appendChild(card);
 
+    let divimg=document.createElement('div');
+    divimg.classList.add('col-lg-6');
+    card.appendChild(divimg);
+
     let img= document.createElement('img');
-    img.classList.add('card-img-top');
     img.setAttribute('class','image-produit');
     img.src= response.imageUrl;   
-    card.appendChild(img);
+    divimg.appendChild(img);
 
     let cardBody= document.createElement('div');
-    cardBody.classList.add('card-body');    
+    cardBody.classList.add('col-lg-6');    
     card.appendChild(cardBody);
 
-    let cardTitle= document.createElement('h');
-    cardTitle.classList.add('card-title');
+    let cardTitle= document.createElement('h2');
     cardTitle.textContent= response.name;
     cardBody.appendChild(cardTitle);
 
@@ -56,7 +58,7 @@ request.onreadystatechange = function() {
           document.querySelector("select").appendChild(optionproduit).textContent= produit;
         });
         break;
-    
+
       default:
         console.log('Ok')
     }
@@ -79,8 +81,8 @@ request.onreadystatechange = function() {
   function createNewCart() {
       let storageCart = localStorage.getItem('cart');
       if (storageCart == null) {
-          newCart = []
-          console.log('Initialisation')
+          newCart = [];
+          console.log('Initialisation');
           console.log('Création du panier !');
       } else {
           newCart = JSON.parse(storageCart)
@@ -88,6 +90,8 @@ request.onreadystatechange = function() {
       }
 
       localStorage.setItem('cart', JSON.stringify(newCart));
+      console.log(newCart);
+      console.log(localStorage.getItem('cart'));
 
   }
 
