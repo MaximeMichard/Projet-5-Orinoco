@@ -43,7 +43,7 @@ request.onreadystatechange = function() {
 
     let priceText=document.createElement('p');
     priceText.classList.add('card-text');
-    priceText.textContent=response.price +'€';
+    priceText.textContent='Prix : ' + response.price +'€';
     cardBody.appendChild(priceText);
 
     let content= document.createElement('p');
@@ -77,29 +77,29 @@ request.onreadystatechange = function() {
 
   let addCart= document.getElementById('ajoutpanier');
   addCart.onclick = function() {
-    alert("Votre produit vient d'être ajouté au panier !")
+    alert("Ajouter au panier !")
 };
 
 //Bouton Ajouter produit //
 
   addCart.addEventListener('click', addProducts);
 
-  let newCart = null;
+  let newItem = null;
 
-  function createNewCart() {
-      let storageCart = localStorage.getItem('cart');
-      if (storageCart == null) {
-          newCart = [];
+  function createItem() {
+      let storageItem = localStorage.getItem('item');
+      if (storageItem == null) {
+          newItem = [];
           console.log('Initialisation');
           console.log('Création du panier !');
       } else {
-          newCart = JSON.parse(storageCart)
+          newItem = JSON.parse(storageItem)
           console.log('Récupération')
       }
 
-      localStorage.setItem('cart', JSON.stringify(newCart));
-      console.log(newCart);
-      console.log(localStorage.getItem('cart'));
+      localStorage.setItem('item', JSON.stringify(newItem));
+      console.log(newItem);
+      console.log(localStorage.getItem('item'));
 
   }
 
@@ -107,26 +107,26 @@ request.onreadystatechange = function() {
 
       let productColor = select.options[select.selectedIndex].value;
       let productId = produit;
-      let productFound = newCart.find(element => element.productId == productId && element.productColor == productColor);
+      let productFound = newItem.find(element => element.productId == productId && element.productColor == productColor);
       if (productFound == undefined) {
           let productQuantity = 1;
           let productPrice = response.price;
           let productName = response.name;
-          newCart.push({ productId, productColor, productName, productPrice, productQuantity });
+          newItem.push({ productId, productColor, productName, productPrice, productQuantity });
       } else {
           productFound.productQuantity++;
       }
 
-      localStorage.setItem('cart', JSON.stringify(newCart));
+      localStorage.setItem('item', JSON.stringify(newItem));
 
       console.log('Ajout du produit dans le panier !');
-      console.log(newCart)
+      console.log(newItem)
   }
 
 
   function addProducts() {
-      if (newCart == null) {
-          createNewCart()
+      if (newItem == null) {
+          createItem()
       }
       products();
   }

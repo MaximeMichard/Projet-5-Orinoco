@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="shortcut icon" type="image/png" href="../images/Logo.png">
-    <script src="https://kit.fontawesome.com/267db64420.js" crossorigin="anonymous"></script>
     <meta property="og:title" content="Orinoco"/>
     <title>Panier</title>
+    <script defer src="https://kit.fontawesome.com/267db64420.js" crossorigin="anonymous"></script>
     <script defer src="../js/panier.js"></script>
 </head>
 <body class="page">
@@ -28,15 +28,14 @@
               <th id="name" scope="col">Nom</th>
               <th id="price" scope="col">Prix</th>
               <th id="color" scope="col">Couleur</th>
-              <th id="quantity" scope="col">Quantité</th>
-              <th id="totalPrice" scope="col">Prix Total</th>
               <th id="deleteProduct" scope="col">Delete</td>
-            </tr>
+            </tr>  
           </thead>
           <tbody id="panier__body">  
           </tbody>
-          <tfoot id="prix__total">
-          </tfoot>
+          <tr>
+            <td id="prix__total"></td>
+          </tr>
         </table>
       </div>
       <div class="container bloc-lg">
@@ -48,27 +47,28 @@
                     <div class="form-group">
                      <label>
                      Nom
-                      <input id="name" class="form-control" type="text" required />
+                      <input id="nom" class="form-control" type="text" required />
                       </label>	
                     </div>
                     <div class="form-group">
                      <label>
                       Prénom
-                        <input id="name" class="form-control" type="text" required />
+                        <input id="prenom" class="form-control" type="text" required />
                      </label>	
                     </div>
                     <div class="form-group">
                       <label>
+                        Ville
+                      <input id="ville"class="form-control" type="text" required id="input_504" />
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label>
                          Adresse
-                       <input id="name" class="form-control" type="text" required />
+                       <input id="adresse" class="form-control" type="text" required />
                      </label>	
                     </div>
-                   <div class="form-group">
-                        <label>
-                           Code postal
-                            <input id="name" class="form-control" type="text" required />
-                        </label>	
-                      </div>             
+            
                      </div>
                       <div class="col-sm-6">
               <div class="form-group">
@@ -80,7 +80,7 @@
               <div class="form-group">
                 <label>
                   Téléphone
-                <input class="form-control" type="text" required id="input_504" />
+                <input id="Tel"class="form-control" type="text" required id="input_504" />
                 </label>
               </div>
               <div class="form-group">
