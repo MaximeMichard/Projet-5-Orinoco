@@ -109,10 +109,9 @@ request.onreadystatechange = function() {
       let productId = produit;
       let productFound = newItem.find(element => element.productId == productId && element.productColor == productColor);
       if (productFound == undefined) {
-          let productQuantity = 1;
           let productPrice = response.price;
           let productName = response.name;
-          newItem.push({ productId, productColor, productName, productPrice, productQuantity });
+          newItem.push({ productId, productColor, productName, productPrice,});
       } else {
           productFound.productQuantity++;
       }

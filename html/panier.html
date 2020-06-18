@@ -42,51 +42,38 @@
         <h2 class="text-center">Passer votre commande</h2>
           <div class="row d-flex justify-content-center align-items-center">
               <div class="col-sm-6">
-                  <form id="form_1" class="d-flex" novalidate>
+                  <form id="form_1" method="POST" class="d-flex" >
                   <div class="col-sm-6">
                     <div class="form-group">
-                     <label>
+                     <label for="nom">
                      Nom
                       <input id="nom" class="form-control" type="text" required />
                       </label>	
                     </div>
                     <div class="form-group">
-                     <label>
+                     <label for="prenom">
                       Prénom
                         <input id="prenom" class="form-control" type="text" required />
                      </label>	
                     </div>
                     <div class="form-group">
-                      <label>
+                      <label for="ville">
                         Ville
                       <input id="ville"class="form-control" type="text" required id="input_504" />
                       </label>
                     </div>
-                    <div class="form-group">
-                      <label>
-                         Adresse
-                       <input id="adresse" class="form-control" type="text" required />
-                     </label>	
-                    </div>
-            
                      </div>
                       <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="adresse">
+                             Adresse
+                           <input id="adresse" class="form-control" type="text" required />
+                         </label>	
+                        </div>
               <div class="form-group">
-                <label>
+                <label for="email">
                   Adresse email
                   <input id="email" class="form-control" type="email" required />
-                </label>
-              </div>
-              <div class="form-group">
-                <label>
-                  Téléphone
-                <input id="Tel"class="form-control" type="text" required id="input_504" />
-                </label>
-              </div>
-              <div class="form-group">
-                <label>
-                Commentaire<br>
-                  <textarea id="message" class="form-control" rows="4" cols="50" required></textarea>
                 </label>
               </div>
                <button id="v-commande"class="bloc-button btn btn-primary btn-block cta-hero btn-atomic-tangerine" type="submit">
