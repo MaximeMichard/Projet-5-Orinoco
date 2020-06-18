@@ -3,10 +3,7 @@ const main= document.getElementById('main');
 
 let url= document.location.href;
 
-if(url.search('produit.html') != -1 ){
-    console.log('produit');
-}
-else if(url.search('index.html')!= -1 ){
+ if(url.search('index.html')!= -1 ){
   let request = new XMLHttpRequest();
 
 request.onreadystatechange = function() {

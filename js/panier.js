@@ -117,8 +117,9 @@ function sendData(panier) {
     return new Promise (function(resolve, reject){
         let request = new XMLHttpRequest();
         request.onreadystatechange = function () {
-          if (this.readyState == XMLHttpRequest.DONE) {
-              
+          if (this.readyState == XMLHttpRequest.DONE && this.status== 201) {
+            localStorage.setItem('order', JSON.stringify(panier));
+            window.location= "../html/commande.html";
             resolve('ok');
           }
           else{
