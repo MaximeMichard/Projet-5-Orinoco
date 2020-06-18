@@ -118,7 +118,12 @@ function sendData(panier) {
         let request = new XMLHttpRequest();
         request.onreadystatechange = function () {
           if (this.readyState == XMLHttpRequest.DONE && this.status== 201) {
+            console.log(JSON.parse(this.responseText)["orderId"]);
+            localStorage.setItem('order', JSON.parse(this.responseText)["orderId"]);
             resolve('ok');
+            console.log(panier);
+            window.location= "../html/commande.html "; 
+            
           }
           else{
               reject(this);
@@ -127,6 +132,7 @@ function sendData(panier) {
     request.open("POST", "http://localhost:3000/api/teddies/order");
     request.setRequestHeader("Content-Type", "application/json");
     request.send(JSON.stringify(panier));
+    
     })
 }
 
@@ -144,7 +150,7 @@ envoi.addEventListener("submit", function(e){
     
 
     let contact={
-        "firtName": document.getElementById('prenom').value ,
+        "firstName": document.getElementById('prenom').value ,
         "lastName": document.getElementById('nom').value,
         "address": document.getElementById('adresse').value,
         "city": document.getElementById('ville').value,
@@ -160,7 +166,7 @@ envoi.addEventListener("submit", function(e){
     e.preventDefault();
 
     console.log(JSON.stringify(objet)); 
-
+    
     sendData(objet).then(function(data){
         console.log(data);
     }).catch(function(error){
