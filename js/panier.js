@@ -118,6 +118,7 @@ function sendData(panier) {
         let request = new XMLHttpRequest();
         request.onreadystatechange = function () {
           if (this.readyState == XMLHttpRequest.DONE) {
+              
             resolve('ok');
           }
           else{
@@ -136,11 +137,11 @@ envoi.addEventListener("submit", function(e){
         alert('Votre panier est vide');
     }
 
-    /* let products= [];
+    let products= [];
 
     JSON.parse(localStorage.getItem("item")).forEach((productsLists) =>{
     	products.push(productsLists.productId);
-    }); */
+    });
     
 
     let contact={
@@ -153,10 +154,10 @@ envoi.addEventListener("submit", function(e){
 
     let objet= {
         contact,
-        "products" : ["5beaa8bf1c9d440000a57d94"],
+        products,
     }
 
-
+    
     e.preventDefault();
 
     console.log(JSON.stringify(objet)); 
