@@ -46,7 +46,7 @@ if (storageItem != null) {
         const totalPrice = document.getElementById('prix__total');
         totalPrice.innerHTML = "<p>Prix Total de votre panier</p>" + somme + "€";
         const prix = localStorage.setItem('prix', JSON.stringify(somme));
-        
+
     }
 }
 //Verification Formulaire //
@@ -154,8 +154,8 @@ envoi.addEventListener("submit", function (e) {
     console.log(JSON.stringify(objet));
 
     post("http://localhost:3000/api/teddies/order", objet).then(function (data) {
-        localStorage.setItem('order', JSON.stringify(data));   
-        console.log(data);  
-         window.location= "../html/commande.html"; 
+        localStorage.setItem('order', JSON.stringify(data));
+        console.log(data);
+        window.location = "../html/commande.html";
     });
 });
