@@ -7,7 +7,7 @@ const panierTableau = document.getElementById('panier__body');
 if (storageItem != null) {
 
     for (let i = 0; i < productsLists.length; i++) {
-        
+
         const price = productsLists[i].productPrice;
         let ligneTableau = panierTableau.insertRow(0);
 
@@ -20,7 +20,7 @@ if (storageItem != null) {
         let colonneTableau3 = ligneTableau.insertCell(2);
         colonneTableau3.innerHTML += (productsLists[i].productColor);
 
-      
+
         let colonneTableau4 = ligneTableau.insertCell(3);
 
         let button = document.createElement('button');
@@ -28,7 +28,7 @@ if (storageItem != null) {
 
         colonneTableau4.appendChild(button);
 
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             panierTableau.deleteRow(i)
             productsLists.splice(i, 1);
             localStorage.setItem('item', JSON.stringify(productsLists));
@@ -37,68 +37,62 @@ if (storageItem != null) {
 
         // Calcul Prix Total //
 
-        let somme= 0;
-        
-        JSON.parse(localStorage.getItem('item')).forEach(( productsLists)=>{
+        let somme = 0;
+
+        JSON.parse(localStorage.getItem('item')).forEach((productsLists) => {
             somme += productsLists.productPrice;
         });
-       
+
         const totalPrice = document.getElementById('prix__total');
-        totalPrice.innerHTML = "<p>Prix Total de votre panier</p>"+ somme +"€";
+        totalPrice.innerHTML = "<p>Prix Total de votre panier</p>" + somme + "€";
+        const prix = localStorage.setItem('prix', JSON.stringify(somme));
+        
     }
 }
-
 //Verification Formulaire //
 function achat(event) {
-    
-    let mail= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let number= /[0-9]/;
-    let CharacterMagic= /[§!@#$%^&*().?":{}|<>]/;
 
-    let messageError= "";
+    let mail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let number = /[0-9]/;
+    let CharacterMagic = /[§!@#$%^&*().?":{}|<>]/;
 
-
-//Test Input//
-
-//Nom//
-
-if(number.test(nom.value)== true || CharacterMagic.test(nom.value)== true || nom== "")
-{
-    messageError="Renseigne ton nom ";
-    
-}
-//Prenom//
-else if(number.test(prenom.value)== true || CharacterMagic.test(prenom.value)==true || prenom== ""){
-    messageError="Renseigne ton prenom ";
-   
-}
-//Ville//
-else if(number.test(ville.value)==true|| CharacterMagic.test(ville.value)==true|| ville=="")
-{
-    messageError="Rensigne ta ville ";
-   
-}
-//Adresse//
-else if(adresse=="" || CharacterMagic.test(adresse.value)==true){
-    messageError="Renseigne bien ton adresse ";    
-}
-//Mail//
-else if(mail.test(email.value)==false){
-    messageError="Renseigne ton adresse ";
-   
-}
-//Tel//
-else if(number.test(tel.value)==false || tel== ""){
-    messageError="Renseigne ton numéro merci";
- 
-}
-
-else if(messageError != ""){
-    alert("Il faut"+ "\n" + messageError);  
-}
+    let messageError = "";
 
 
-    else{
+    //Test Input//
+
+    //Nom//
+
+    if (number.test(nom.value) == true || CharacterMagic.test(nom.value) == true || nom == "") {
+        messageError = "Renseigne ton nom ";
+
+    }
+    //Prenom//
+    else if (number.test(prenom.value) == true || CharacterMagic.test(prenom.value) == true || prenom == "") {
+        messageError = "Renseigne ton prenom ";
+
+    }
+    //Ville//
+    else if (number.test(ville.value) == true || CharacterMagic.test(ville.value) == true || ville == "") {
+        messageError = "Rensigne ta ville ";
+
+    }
+    //Adresse//
+    else if (adresse == "" || CharacterMagic.test(adresse.value) == true) {
+        messageError = "Renseigne bien ton adresse ";
+    }
+    //Mail//
+    else if (mail.test(email.value) == false) {
+        messageError = "Renseigne ton adresse ";
+
+    }
+    //Tel//
+    else if (number.test(tel.value) == false || tel == "") {
+        messageError = "Renseigne ton numéro merci";
+
+    } else if (messageError != "") {
+        alert("Il faut" + "\n" + messageError);
+    } else {
         /* let request = new XMLHttpRequest();
             request.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -110,76 +104,58 @@ else if(messageError != ""){
         request.open("POST", "http://localhost:3000/api/teddies/order");
         request.setRequestHeader("Content-Type", "application/json");
         request.send(achat); */
-    }      
+    }
 }
 
-function sendData(panier) {
-    return new Promise (function(resolve, reject){
+function post(url, data) {
+    return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
         request.onreadystatechange = function () {
-          if (this.readyState == XMLHttpRequest.DONE && this.status== 201) {
-            console.log(JSON.parse(this.responseText)["orderId"]);
-            localStorage.setItem('order', JSON.parse(this.responseText)["orderId"]);
-            resolve('ok');
-            console.log(panier);
-            window.location= "../html/commande.html "; 
-            
-          }
-          else{
-              reject(this);
-          }
+            if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
+                resolve(JSON.parse(this.responseText));
+            }
         };
-    request.open("POST", "http://localhost:3000/api/teddies/order");
-    request.setRequestHeader("Content-Type", "application/json");
-    request.send(JSON.stringify(panier));
-    
+        request.open("POST", url);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify(data));
+
     })
 }
 
 let envoi = document.getElementById('form_1');
-envoi.addEventListener("submit", function(e){
-    if( productsLists== null){
+envoi.addEventListener("submit", function (e) {
+    if (productsLists == null) {
         alert('Votre panier est vide');
     }
 
-    let products= [];
+    let products = [];
 
-    JSON.parse(localStorage.getItem("item")).forEach((productsLists) =>{
-    	products.push(productsLists.productId);
+    JSON.parse(localStorage.getItem("item")).forEach((productsLists) => {
+        products.push(productsLists.productId);
     });
-    
 
-    let contact={
-        "firstName": document.getElementById('prenom').value ,
+
+    let contact = {
+        "firstName": document.getElementById('prenom').value,
         "lastName": document.getElementById('nom').value,
         "address": document.getElementById('adresse').value,
         "city": document.getElementById('ville').value,
         "email": document.getElementById('email').value,
     }
 
-    let objet= {
+    let objet = {
         contact,
         products,
     }
 
-    
+
     e.preventDefault();
 
-    console.log(JSON.stringify(objet)); 
-    
-    sendData(objet).then(function(data){
-        console.log(data);
-    }).catch(function(error){
-        console.log(error);
-    })
-    ; 
+    console.log(JSON.stringify(objet));
+
+    post("http://localhost:3000/api/teddies/order", objet).then(function (data) {
+        localStorage.setItem('order', JSON.stringify(data));   
+        console.log(data);  
+         window.location= "../html/commande.html"; 
+    });
 });
-
-
-
-
-
-
-
-
-     

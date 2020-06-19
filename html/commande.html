@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="../images/Logo.png">
-    <script src="https://kit.fontawesome.com/267db64420.js" crossorigin="anonymous"></script>
-    <meta property="og:title" content="Orinoco"/>
-    <title>Commande</title>
-    <script defer src="../js/commande.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="shortcut icon" type="image/png" href="../images/Logo.png">
+  <script src="https://kit.fontawesome.com/267db64420.js" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Orinoco" />
+  <title>Commande</title>
+  <script defer src="../js/commande.js"></script>
 </head>
+
 <body class="page">
-   <div class="container">
+  <div class="container">
     <header>
       <nav class="navbar">
-        <a class="navbar-brand" href="../index.html"><img class="logo" src="../images/Logo.png" alt="Logo entreprise"></a>
+        <a class="navbar-brand" href="../index.html"><img class="logo" src="../images/Logo.png"
+            alt="Logo entreprise"></a>
         <a href="panier.html"><i class="fas fa-shopping-basket fa-3x"></i></a>
       </nav>
     </header>
     <main>
-        <div id="recap"></div>
+      <div class="resume"> 
+        <h1>Merci de votre confiance</h1>
+        <p>Bonjour <span class="nom"></span>, Merci de nous avoir fais confiance concernant nos produits. Votre numéro de commande est le : <span class="orderID"></span></p>
+        <p>Le prix total de votre transaction est de : <span class="prixTotal"></span> </p>
+      </div>
     </main>
-    <footer class="row"> 
+    <footer class="row">
       <div class="container bloc-sm">
         <div class="row">
           <div class="col-sm-12">
@@ -54,12 +61,12 @@
             <div class="row d-flex justify-content-around">
               <div class="col-sm-4">
                 <h4>Partenaires</h4>
-                  <ul class="list-unstyled">
-                    <li><a href="voiture.com" title="voiture">Location de voiture</a></li>
-                    <li><a href="pizza.com" title="pizza">Pizerria</a></li>
-                    <li><a href="matoiture.com" title="toiture">Charpentier</a></li>
-                    <li><a href="immobilierseo.com" title="immobilier">Agence Immobilière</a></li>
-                  </ul>		
+                <ul class="list-unstyled">
+                  <li><a href="voiture.com" title="voiture">Location de voiture</a></li>
+                  <li><a href="pizza.com" title="pizza">Pizerria</a></li>
+                  <li><a href="matoiture.com" title="toiture">Charpentier</a></li>
+                  <li><a href="immobilierseo.com" title="immobilier">Agence Immobilière</a></li>
+                </ul>
               </div>
               <div class="col-sm-4">
                 <h4><a href="mailto:maximemichard0@gmail.com">Contactez-nous</a></h4>
@@ -74,6 +81,7 @@
         </div>
       </div>
     </footer>
-   </div>
+  </div>
 </body>
+
 </html>
