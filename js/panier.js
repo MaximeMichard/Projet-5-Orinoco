@@ -50,50 +50,50 @@ if (storageItem != null) {
     }
 }
 //Verification Formulaire //
-function achat(event) {
-
-    let mail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let number = /[0-9]/;
-    let CharacterMagic = /[§!@#$%^&*().?":{}|<>]/;
-
-    let messageError = "";
 
 
-    //Test Input//
+let mail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+let number = /[0-9]/;
+let CharacterMagic = /[§!@#$%^&*().?":{}|<>]/;
 
-    //Nom//
+let messageError = "";
 
-    if (number.test(nom.value) == true || CharacterMagic.test(nom.value) == true || nom == "") {
-        messageError = "Renseigne ton nom ";
 
-    }
-    //Prenom//
-    else if (number.test(prenom.value) == true || CharacterMagic.test(prenom.value) == true || prenom == "") {
-        messageError = "Renseigne ton prenom ";
+//Test Input//
 
-    }
-    //Ville//
-    else if (number.test(ville.value) == true || CharacterMagic.test(ville.value) == true || ville == "") {
-        messageError = "Rensigne ta ville ";
+//Nom//
 
-    }
-    //Adresse//
-    else if (adresse == "" || CharacterMagic.test(adresse.value) == true) {
-        messageError = "Renseigne bien ton adresse ";
-    }
-    //Mail//
-    else if (mail.test(email.value) == false) {
-        messageError = "Renseigne ton adresse ";
+if (number.test(nom.value) == true || CharacterMagic.test(nom.value) == true || nom == "") {
+    messageError = "Renseigne ton nom ";
 
-    }
-    //Tel//
-    else if (number.test(tel.value) == false || tel == "") {
-        messageError = "Renseigne ton numéro merci";
-
-    } else if (messageError != "") {
-        alert("Il faut" + "\n" + messageError);
-    } 
 }
+//Prenom//
+else if (number.test(prenom.value) == true || CharacterMagic.test(prenom.value) == true || prenom == "") {
+    messageError = "Renseigne ton prenom ";
+
+}
+//Ville//
+else if (number.test(ville.value) == true || CharacterMagic.test(ville.value) == true || ville == "") {
+    messageError = "Rensigne ta ville ";
+
+}
+//Adresse//
+else if (adresse == "" || CharacterMagic.test(adresse.value) == true) {
+    messageError = "Renseigne bien ton adresse ";
+}
+//Mail//
+else if (mail.test(email.value) == false) {
+    messageError = "Renseigne ton adresse ";
+
+}
+//Tel//
+else if (number.test(tel.value) == false || tel == "") {
+    messageError = "Renseigne ton numéro merci";
+//Message Error//
+} else if (messageError != "") {
+    alert("Il faut" + "\n" + messageError);
+}
+
 let envoi = document.getElementById('form_1');
 envoi.addEventListener("submit", function (e) {
     if (productsLists == null) {
@@ -122,7 +122,7 @@ envoi.addEventListener("submit", function (e) {
 
 
     e.preventDefault();
-    
+
     console.log(JSON.stringify(objet));
 
     post("http://localhost:3000/api/teddies/order", objet).then(function (data) {
@@ -130,7 +130,7 @@ envoi.addEventListener("submit", function (e) {
         console.log(data);
         window.location = "../html/commande.html";
     }).catch(catchError);
-    let catchError= function(e){
+    let catchError = function (e) {
         console.error(e);
     }
 });
