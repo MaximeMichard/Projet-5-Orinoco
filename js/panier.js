@@ -92,36 +92,8 @@ function achat(event) {
 
     } else if (messageError != "") {
         alert("Il faut" + "\n" + messageError);
-    } else {
-        /* let request = new XMLHttpRequest();
-            request.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                let confirmation = JSON.parse(this.responseText);
-                localStorage.setItem('order', JSON.stringify(confirmation));     
-                window.location.href = "../html/commande.html";
-                }
-            };
-        request.open("POST", "http://localhost:3000/api/teddies/order");
-        request.setRequestHeader("Content-Type", "application/json");
-        request.send(achat); */
-    }
+    } 
 }
-
-function post(url, data) {
-    return new Promise(function (resolve, reject) {
-        let request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
-                resolve(JSON.parse(this.responseText));
-            }
-        };
-        request.open("POST", url);
-        request.setRequestHeader("Content-Type", "application/json");
-        request.send(JSON.stringify(data));
-
-    })
-}
-
 let envoi = document.getElementById('form_1');
 envoi.addEventListener("submit", function (e) {
     if (productsLists == null) {
@@ -150,12 +122,15 @@ envoi.addEventListener("submit", function (e) {
 
 
     e.preventDefault();
-
+    
     console.log(JSON.stringify(objet));
 
     post("http://localhost:3000/api/teddies/order", objet).then(function (data) {
         localStorage.setItem('order', JSON.stringify(data));
         console.log(data);
         window.location = "../html/commande.html";
-    });
+    }).catch(catchError);
+    let catchError= function(e){
+        console.error(e);
+    }
 });

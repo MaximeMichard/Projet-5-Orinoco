@@ -136,5 +136,8 @@ h1 {
     opacity: 1;
   }
 }
+.perso, h1, h2, h3 {
+  font-family: "Krona One", sans-serif;
+}
 
 /*# sourceMappingURL=style.css.map */

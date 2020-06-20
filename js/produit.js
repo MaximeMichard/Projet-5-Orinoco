@@ -66,9 +66,6 @@ request.onreadystatechange = function () {
           document.querySelector("select").appendChild(optionproduit).textContent = produit;
         });
         break;
-
-      default:
-        console.log('Ok')
     }
 
     let btn = document.createElement('a');
