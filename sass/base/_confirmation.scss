@@ -1,5 +1,7 @@
+@import "../utils/mixin"; 
 .orderID {
-    color: green;
+    background:linear-gradient(to right,#e58a0c,#945ef0);
+    @include webkit;
     font-weight: bold;
     font-size: 2.5rem;
 }
@@ -11,8 +13,13 @@
 .resume p {
     font-size: 1.5rem;
 }
+.resume h1 {
+    background:linear-gradient(to right,#e58a0c,#945ef0);
+    @include webkit; 
+}
 
 .prixTotal {
-    color: green;
+    background:linear-gradient(to right,#e58a0c,#945ef0);
+    @include webkit;
     font-size: 2rem;
 }

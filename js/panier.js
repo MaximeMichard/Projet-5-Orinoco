@@ -2,8 +2,6 @@ const storageItem = localStorage.getItem('item');
 const productsLists = JSON.parse(storageItem);
 const panierTableau = document.getElementById('panier__body');
 
-
-
 if (storageItem != null) {
 
     for (let i = 0; i < productsLists.length; i++) {
@@ -49,8 +47,8 @@ if (storageItem != null) {
 
     }
 }
-//Verification Formulaire //
 
+//Verification Formulaire //
 
 let mail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let number = /[0-9]/;
