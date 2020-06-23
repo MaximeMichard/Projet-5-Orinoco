@@ -1,15 +1,10 @@
-const produitTeddie = "teddies";
-
+//Variable //
 let container = document.querySelector("#produit");
-
 const select = document.getElementById('select');
-
+const produitTeddie = "teddies";
 let url = document.location.href;
-
 let url_string = url;
-
 url = new URL(url_string);
-
 let produit = url.searchParams.get("produit");
 
 let request = new XMLHttpRequest();
@@ -17,7 +12,7 @@ let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
   if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
     let response = JSON.parse(this.responseText);
-
+    //Construction des cards en fonction de l'ID du produit//
     let card = document.createElement('div');
     card.classList.add('row');
     container.appendChild(card);
@@ -58,7 +53,7 @@ request.onreadystatechange = function () {
     select.classList.add('card-text');
     select.setAttribute('id', 'select');
     cardBody.appendChild(select);
-
+    //Boucle pour création des options de personnalisation des Nounours//
     switch (produitTeddie) {
       case "teddies":
         response.colors.forEach(produit => {
@@ -85,7 +80,7 @@ request.onreadystatechange = function () {
     addCart.addEventListener('click', addProducts);
 
     let newItem = null;
-
+    //Stockage des Informations dans le local Storage//
     function createItem() {
       let storageItem = localStorage.getItem('item');
       if (storageItem == null) {
@@ -102,7 +97,7 @@ request.onreadystatechange = function () {
       console.log(localStorage.getItem('item'));
 
     }
-
+    //Création des informations dans le localStorage//
     function products() {
 
       let productColor = select.options[select.selectedIndex].value;
@@ -124,7 +119,7 @@ request.onreadystatechange = function () {
       console.log(newItem)
     }
 
-
+    //Ajout des produits//
     function addProducts() {
       if (newItem == null) {
         createItem()

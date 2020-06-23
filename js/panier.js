@@ -47,56 +47,72 @@ if (storageItem != null) {
 
     }
 }
+checkInput = () => {
+    let prenom = document.getElementById('prenom').value;
+    let nom = document.getElementById('nom').value;
+    let adresse = document.getElementById('adresse').value;
+    let ville = document.getElementById('ville').value;
+    let email = document.getElementById('email').value;
+    //Verification Formulaire //
 
-//Verification Formulaire //
+    let mail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let number = /[0-9]/;
+    let CharacterMagic = /[§!@#$%^&*().?":{}|<>]/;
 
-let mail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-let number = /[0-9]/;
-let CharacterMagic = /[§!@#$%^&*().?":{}|<>]/;
+    let messageError = "";
+    //Test Input//
 
-let messageError = "";
-
-
-//Test Input//
-
-//Nom//
-
-if (number.test(nom.value) == true || CharacterMagic.test(nom.value) == true || nom == "") {
-    messageError = "Renseigne ton nom ";
-
+    //Nom//
+    if (number.test(nom.value) == true || CharacterMagic.test(nom.value) == true || nom == "") {
+        messageError = "Renseigne ton nom ";
+    }
+    //Prenom//
+    else if (number.test(prenom.value) == true || CharacterMagic.test(prenom.value) == true || prenom == "") {
+        messageError = "Renseigne ton prenom ";
+    }
+    //Ville//
+    else if (number.test(ville.value) == true || CharacterMagic.test(ville.value) == true || ville == "") {
+        messageError = "Rensigne ta ville ";
+    }
+    //Adresse//
+    else if (adresse == "" || CharacterMagic.test(adresse.value) == true) {
+        messageError = "Renseigne bien ton adresse ";
+    }
+    //Mail//
+    else if (mail.test(email.value) == false) {
+        messageError = "Renseigne ton adresse ";
+    }
+    //MessageError//
+    else if (messageError != "") {
+        alert("Il faut" + "\n" + messageError);
+    }
 }
-//Prenom//
-else if (number.test(prenom.value) == true || CharacterMagic.test(prenom.value) == true || prenom == "") {
-    messageError = "Renseigne ton prenom ";
-
-}
-//Ville//
-else if (number.test(ville.value) == true || CharacterMagic.test(ville.value) == true || ville == "") {
-    messageError = "Rensigne ta ville ";
-
-}
-//Adresse//
-else if (adresse == "" || CharacterMagic.test(adresse.value) == true) {
-    messageError = "Renseigne bien ton adresse ";
-}
-//Mail//
-else if (mail.test(email.value) == false) {
-    messageError = "Renseigne ton adresse ";
-
-}
-//Tel//
-else if (number.test(tel.value) == false || tel == "") {
-    messageError = "Renseigne ton numéro merci";
-//Message Error//
-} else if (messageError != "") {
-    alert("Il faut" + "\n" + messageError);
+verifPanier= () => {
+  //Vérifier qu'il y ai au moins un produit dans le panier
+  let etatPanier = JSON.parse(localStorage.getItem("item"));
+  //Si le panier est vide ou null (suppression localStorage par)=>alerte
+  if (etatPanier == null) {
+    //Si l'utilisateur à supprimer son localStorage etatPanier sur la page basket.html et qu'il continue le process de commande
+    alert(
+      "Il y a eu un problème avec votre panier. Veuillez recharger la page"
+    );
+    return false;
+  } else if (etatPanier.length < 1 || etatPanier == null) {
+    alert("Votre panier est vide");
+    return false;
+  } else {
+    console.log("Le panier n'est pas vide");
+    return true;
+  }  
 }
 
 let envoi = document.getElementById('form_1');
 envoi.addEventListener("submit", function (e) {
-    if (productsLists == null) {
-        alert('Votre panier est vide');
-    }
+
+    /* e.preventDefault();
+    if(checkInput() != null && verifPanier() == true){
+        console.log('Error envoi');
+    } */
 
     let products = [];
 
@@ -127,8 +143,8 @@ envoi.addEventListener("submit", function (e) {
         localStorage.setItem('order', JSON.stringify(data));
         console.log(data);
         window.location = "../html/commande.html";
-    }).catch(catchError);
+    })/* .catch(catchError);
     let catchError = function (e) {
         console.error(e);
-    }
+    } */
 });
