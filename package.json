@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/OpenClassrooms-Student-Center/JWDP5/issues"
   },
-  "homepage": "https://github.com/OpenClassrooms-Student-Center/JWDP5#readme"
+  "homepage": "https://github.com/OpenClassrooms-Student-Center/JWDP5#readme",
+  "devDependencies": {
+    "mocka": "0.0.1"
+  }
 }

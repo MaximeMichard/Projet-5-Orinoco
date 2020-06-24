@@ -6,12 +6,14 @@ let url = document.location.href;
 let url_string = url;
 url = new URL(url_string);
 let produit = url.searchParams.get("produit");
+//Requete AJAX//
 
 let request = new XMLHttpRequest();
 
 request.onreadystatechange = function () {
   if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
     let response = JSON.parse(this.responseText);
+    console.log(response); 
     //Construction des cards en fonction de l'ID du produit//
     let card = document.createElement('div');
     card.classList.add('row');
@@ -53,7 +55,7 @@ request.onreadystatechange = function () {
     select.classList.add('card-text');
     select.setAttribute('id', 'select');
     cardBody.appendChild(select);
-    //Boucle pour création des options de personnalisation des Nounours//
+    //Boucle pour création des options(couleur)des Nounours//
     switch (produitTeddie) {
       case "teddies":
         response.colors.forEach(produit => {

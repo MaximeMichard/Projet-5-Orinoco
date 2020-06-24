@@ -1,29 +1,17 @@
 //Variable stocker les informations de l'API ainsi que la page choisi//
 const main = document.getElementById('main');
-
 let url = document.location.href;
 //Requête Ajax en fonction de l'URL//
 if (url.search('index.html') != -1) {
-  let request = new XMLHttpRequest();
-
-  request.onreadystatechange = function () {
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-      let response = JSON.parse(this.responseText);
-      console.log(response);
-      for (let index = 0; index < response.length; index++) {
-        //Boucle pour création des 5 éléments //
-        let card = buildCard(response[index], main);
-        main.appendChild(card);
-      }
+  get('http://localhost:3000/api/teddies').then(function(data){ 
+    for (let index = 0; index < data.length; index++) {
+      //Boucle pour création des 5 éléments //
+      let card = buildCard(data[index], main);
+      main.appendChild(card);
     }
-  };
-
-  request.open('GET', 'http://localhost:3000/api/teddies');
-  request.send();
+  })
 }
-
 //Build Card// 
-
 const buildCard = (item, container) => {
 
   let card = document.createElement('div');
