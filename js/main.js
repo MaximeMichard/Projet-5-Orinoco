@@ -4,8 +4,9 @@ let url = document.location.href;
 //Requête Ajax en fonction de l'URL//
 if (url.search('index.html') != -1) {
   get('http://localhost:3000/api/teddies').then(function(data){ 
+    console.log(data);
+    //Boucle pour création des 5 éléments //
     for (let index = 0; index < data.length; index++) {
-      //Boucle pour création des 5 éléments //
       let card = buildCard(data[index], main);
       main.appendChild(card);
     }

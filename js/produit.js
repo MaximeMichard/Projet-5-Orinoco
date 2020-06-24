@@ -7,7 +7,10 @@ let url_string = url;
 url = new URL(url_string);
 let produit = url.searchParams.get("produit");
 //Requete AJAX//
-
+get('http://localhost:3000/api/teddies/'+ produit).then(function(data){ 
+    console.log(data);
+  })
+  
 let request = new XMLHttpRequest();
 
 request.onreadystatechange = function () {

@@ -1,4 +1,4 @@
-//Requête POST prommisse//
+//Requête POST prommise//
 function post(url, data) {
   return new Promise(function (resolve, reject) {
     let request = new XMLHttpRequest();
@@ -15,7 +15,7 @@ function post(url, data) {
 
   })
 };
-//Requête GET promisse//
+//Requête GET promise//
 function get(url) {
   return new Promise(function (resolve) {
     let request = new XMLHttpRequest();
