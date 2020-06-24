@@ -9,14 +9,6 @@ let produit = url.searchParams.get("produit");
 //Requete AJAX//
 get('http://localhost:3000/api/teddies/'+ produit).then(function(data){ 
     console.log(data);
-  })
-  
-let request = new XMLHttpRequest();
-
-request.onreadystatechange = function () {
-  if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-    let response = JSON.parse(this.responseText);
-    console.log(response); 
     //Construction des cards en fonction de l'ID du produit//
     let card = document.createElement('div');
     card.classList.add('row');
@@ -28,7 +20,7 @@ request.onreadystatechange = function () {
 
     let img = document.createElement('img');
     img.classList.add('img-thumbnail');
-    img.src = response.imageUrl;
+    img.src = data.imageUrl;
     divimg.appendChild(img);
 
     let cardBody = document.createElement('div');
@@ -36,17 +28,17 @@ request.onreadystatechange = function () {
     card.appendChild(cardBody);
 
     let cardTitle = document.createElement('h2');
-    cardTitle.textContent = response.name;
+    cardTitle.textContent = data.name;
     cardBody.appendChild(cardTitle);
 
     let cardText = document.createElement('p');
     cardText.classList.add('card-text');
-    cardText.textContent = response.description;
+    cardText.textContent = data.description;
     cardBody.appendChild(cardText);
 
     let priceText = document.createElement('p');
     priceText.classList.add('card-text');
-    priceText.textContent = 'Prix : ' + response.price + '€';
+    priceText.textContent = 'Prix : ' + data.price + '€';
     cardBody.appendChild(priceText);
 
     let content = document.createElement('p');
@@ -61,7 +53,7 @@ request.onreadystatechange = function () {
     //Boucle pour création des options(couleur)des Nounours//
     switch (produitTeddie) {
       case "teddies":
-        response.colors.forEach(produit => {
+        data.colors.forEach(produit => {
           let optionproduit = document.createElement("option");
           document.querySelector("select").appendChild(optionproduit).textContent = produit;
         });
@@ -109,8 +101,8 @@ request.onreadystatechange = function () {
       let productId = produit;
       let productFound = newItem.find(element => element.productId == productId && element.productColor == productColor);
       if (productFound == undefined) {
-        let productPrice = response.price;
-        let productName = response.name;
+        let productPrice = data.price;
+        let productName = data.name;
         newItem.push({
           productId,
           productColor,
@@ -131,9 +123,4 @@ request.onreadystatechange = function () {
       }
       products();
     }
-
-  }
-
-};
-request.open('GET', 'http://localhost:3000/api/teddies/' + produit);
-request.send();
+});
