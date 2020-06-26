@@ -8,7 +8,7 @@ if (storageItem != null) {
     for (let i = 0; i < productsLists.length; i++) {
 
         const price = productsLists[i].productPrice;
-        let ligneTableau = panierTableau.insertRow(0);
+        let ligneTableau = panierTableau.insertRow(-1);
 
         let colonneTableau1 = ligneTableau.insertCell(0);
         colonneTableau1.innerHTML += (productsLists[i].productName);
